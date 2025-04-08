@@ -104,12 +104,12 @@ function Footer() {
               className="px-2 py-1 rounded text-black text-xs focus:outline-none"
               required
             />
-            <button
-              type="submit"
-              className="bg-yellow-400 text-black px-3 py-1 rounded hover:bg-yellow-300 text-xs"
-            >
-              Subscribe
+           
+          <button type="button" className="text-white bg-yellow-600		 hover:bg-bg-yellow-412/90 focus:ring-4 focus:outline-none focus:ring-[#3b5998]/50 font-medium rounded-lg text-sm px-5 py-1 text-center inline-flex items-center dark:focus:ring-[#3b5998]/55 me-2 mb-2">
+
+            Get Started Now
             </button>
+
           </form>
       </div>
 
