@@ -16,7 +16,10 @@ function Header() {
       <span className="font-bold">New</span> — 
       We have launched over 100+ opportunities and jobs at Project X! <span> </span>
       <Link to="/new-blog" className="text-blue-600 hover:text-blue-800 inline-flex items-center">
-        Check out ->
+        Check out 
+        <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+        </svg>
         
       </Link>
     </p>
