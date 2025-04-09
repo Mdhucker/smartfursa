@@ -17,8 +17,8 @@ function Header() {
       We have launched over 100+ opportunities and jobs at Project X! <span> </span>
       <Link to="/new-blog" className="text-blue-600 hover:text-blue-800 inline-flex items-center">
         Check out 
-        <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+        <svg className="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
         </svg>
         
       </Link>
@@ -33,13 +33,13 @@ function Header() {
           <img
             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGXiyanH3C-cXQGBTnL3ZUzSSpb3eaCQR_Yw&s"
             alt="Logo"
-            className="w-28 h-8 rounded-md mr-2"
+            className="w-28 h-8 rounded-md mr-1"
           />
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden sm:flex space-x-4 items-center">
-          <Link to="/" className="text-sm text-white hover:text-yellow-300 py-1">Home</Link>
+        <nav className="hidden sm:flex space-x-2 items-center">
+          <Link to="/" className="text-sm text-white hover:text-yellow-300 py-1">Results</Link>
           <Link to="/tanzania-jobs" className="text-sm text-white hover:text-yellow-300 py-1">Tanzania-Jobs</Link>
           <Link to="/all-jobs" className="text-sm text-white hover:text-yellow-300 py-1">All-Jobs</Link>
           <Link to="/tender" className="text-sm text-white hover:text-yellow-300 py-1">Tender</Link>

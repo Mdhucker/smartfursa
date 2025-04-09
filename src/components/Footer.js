@@ -26,7 +26,7 @@ function Footer() {
             <ul>
               <h3 className="text-sm font-semibold mb-2">Connect With Us</h3>
               <ul className="space-y-1">
-                <li><a href="mailto:maulidimdami@gmail.com" className="hover:text-yellow-300">Email: project_x@gmail.com</a></li>
+                <li><a href="mailto:maulidiclassName@gmail.com" className="hover:text-yellow-300">Email: project_x@gmail.com</a></li>
                 <li><a href="tel:+255XXXXXXXXX" className="hover:text-yellow-300">Phone: +255 686855352 </a></li>
               </ul>
             </ul>
@@ -98,6 +98,7 @@ function Footer() {
         <div className="container mx-auto flex flex-col items-start space-y-2">
           <p className="text-xs"></p>
           <form className="flex flex-col items-start space-y-2">
+            <p> Get More Updates...</p>
             <input
               type="email"
               placeholder="Your email"
@@ -105,9 +106,9 @@ function Footer() {
               required
             />
            
-          <button type="button" className="text-white bg-yellow-600		 hover:bg-bg-yellow-412/90 focus:ring-4 focus:outline-none focus:ring-[#3b5998]/50 font-medium rounded-lg text-sm px-5 py-1 text-center inline-flex items-center dark:focus:ring-[#3b5998]/55 me-2 mb-2">
+          <button type="button" className="text-white bg-yellow-600		 hover:bg-bg-yellow-412/90 focus:ring-4 focus:outline-none focus:ring-[#3b5998]/50 font-medium rounded-lg text-sm px-6 py-1 text-center inline-flex items-center dark:focus:ring-[#3b5998]/55 me-2 mb-2">
 
-            Get Started Now
+            Subscribe
             </button>
 
           </form>
@@ -139,13 +140,15 @@ function Footer() {
 
           {/* Legal and About Summary */}
         <section className="text-center text-gray-500 text-xs mt-12 border-t pt-6">
-          <p className="text-[10px] text-gray-400">&copy; 2025  Developed by Project X :All Right Reserved</p>
           <p className="mt-2 max-w-xl mx-auto">
             <strong>Privacy Policy:</strong> Project X respects your privacy. We do not share personal information without your consent. Any data you submit is protected and used solely to improve your experience.
           </p>
           <p className="mt-2 max-w-xl mx-auto">
             <strong>About Project X:</strong> Project X is a community-driven blog and platform providing job updates, scholarship info, tenders, and professional development tools to empower Tanzanians. Our mission is to make opportunity accessible for everyone, regardless of their background or location.
           </p>
+            <br/>
+          <p className="text-[10px] text-gray-400">&copy; 2025  Developed by Project X :All Right Reserved</p>
+
         </section>
 
 
