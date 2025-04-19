@@ -1,5 +1,3 @@
-// src/components/Footer.js
-
 import React from 'react';
 import { FaFacebook, FaTwitter, FaLinkedin, FaInstagram } from 'react-icons/fa';
 
@@ -8,7 +6,7 @@ function Footer() {
     <footer className="bg-gray-300 text-black py-6 mt-8 text-xs">
       <div className="container mx-auto px-4">
         {/* Footer Content */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 text-center md:text-left">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6 text-left">
 
           {/* About Us Section */}
           <div>
@@ -21,8 +19,8 @@ function Footer() {
               <li><a href="/contact" className="hover:text-blue-500">Contact Us</a></li>
             </ul>
 
-            <br/>
-            <br/>
+            <br />
+            <br />
             <ul>
               <h3 className="text-base font-semibold mb-2">Connect With Us</h3>
               <ul className="space-y-1 list-disc pl-4">
@@ -31,14 +29,13 @@ function Footer() {
               </ul>
             </ul>
 
-            <br/>
-            <br/>
+            <br />
+            <br />
             <img
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGXiyanH3C-cXQGBTnL3ZUzSSpb3eaCQR_Yw&s"
-            alt="Logo"
-            className="w-28 h-8 rounded-md mr-2"
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGXiyanH3C-cXQGBTnL3ZUzSSpb3eaCQR_Yw&s"
+              alt="Logo"
+              className="w-28 h-8 rounded-md mr-2 mx-auto md:mx-0"
             />
-
           </div>
 
           {/* Jobs by Categories */}
@@ -81,7 +78,7 @@ function Footer() {
           {/* Jobs by Region */}
           <div>
             <h3 className="text-base font-semibold mb-2">Jobs</h3>
-            <ul className="space-y-1 list-disc pl-4"> 
+            <ul className="space-y-1 list-disc pl-4">
               <li><a href="/tanzania-jobs" className="hover:text-blue-500">Tanzania Jobs</a></li>
               <li><a href="/zambia-jobs" className="hover:text-blue-500">Jobs in Zambia</a></li>
               <li><a href="/kenya-jobs" className="hover:text-blue-500">Jobs in Kenya</a></li>
@@ -89,31 +86,6 @@ function Footer() {
               <li><a href="/other-jobs" className="hover:text-blue-500">Other Countries Jobs</a></li>
               <li><a href="/blog" className="hover:text-blue-500">Blog</a></li>
               <li><a href="/driver-jobs" className="hover:text-blue-500">Driver Jobs</a></li>
-            </ul>
-            <br/>
-
-            <ul>
-                
-       {/* Email Subscribe Section */}
-        <div className="container mx-auto flex flex-col items-start space-y-2">
-          <p className="text-xs"></p>
-          <form className="flex flex-col items-start space-y-2">
-            <p> Get More Updates...</p>
-            <input
-              type="email"
-              placeholder="Your email"
-              className="px-2 py-1 rounded text-black text-xs focus:outline-none"
-              required
-            />
-           
-          <button type="button" className="text-white bg-yellow-600		 hover:bg-bg-yellow-412/90 focus:ring-4 focus:outline-none focus:ring-[#3b5998]/50 font-medium rounded-lg text-base px-6 py-1 text-center inline-flex items-center dark:focus:ring-[#3b5998]/55 me-2 mb-2">
-
-            Subscribe
-            </button>
-
-          </form>
-      </div>
-
             </ul>
           </div>
         </div>
@@ -134,38 +106,32 @@ function Footer() {
             <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-blue-500">
               <FaInstagram size={16} />
             </a>
-          </div> 
-    
-
+          </div>
 
           {/* Legal and About Summary */}
-        <section className="text-center text-gray-500 text-xs mt-12  pt-6 ">
-        <div className="w-1/2 mx-auto">
-    <hr className="border-t-2 border-blue-500 mb-4" />
-  </div>
-          <p className="mt-2 max-w-xl mx-auto">
-            <strong>Privacy Policy:</strong> Project X respects your privacy. We do not share personal information without your consent. Any data you submit is protected and used solely to improve your experience.
-          </p>
-          <p className="mt-2 max-w-xl mx-auto">
-            <strong>About Project X:</strong> Project X is a community-driven blog and platform providing job updates, scholarship info, tenders, and professional development tools to empower Tanzanians. Our mission is to make opportunity accessible for everyone, regardless of their background or location.
-          </p>
-            <br/>
-          <p className="text-[10px] text-gray-400">&copy; 2025  Developed by Project X :All Right Reserved</p>
-
-        </section>
-
-
+          <section className="text-center text-gray-500 text-xs mt-12 pt-6 px-2">
+            <div className="w-full sm:w-3/4 md:w-1/2 mx-auto">
+              <hr className="border-t-2 border-blue-500 mb-4" />
+            </div>
+            <p className="mt-2 max-w-xl mx-auto">
+              <strong>Privacy Policy:</strong> Project X respects your privacy. We do not share personal information without your consent. Any data you submit is protected and used solely to improve your experience.
+            </p>
+            <p className="mt-2 max-w-xl mx-auto">
+              <strong>About Project X:</strong> Project X is a community-driven blog and platform providing job updates, scholarship info, tenders, and professional development tools to empower Tanzanians. Our mission is to make opportunity accessible for everyone, regardless of their background or location.
+            </p>
+            <br />
+            <p className="text-[10px] text-gray-400">&copy; 2025 Developed by Project X: All Rights Reserved</p>
+          </section>
         </div>
       </div>
 
-      <div className="w-full h-[150px] bg-gray-300">
+      <div className="w-full h-[100px] sm:h-[120px] md:h-[150px] bg-gray-300 mt-8">
         <img
           src="/images/1.png"
           alt="Ad Banner"
           className="w-full h-full object-cover"
         />
       </div>
-
     </footer>
   );
 }

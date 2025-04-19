@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import React, { useState, useEffect } from 'react';
 
 function Header() {
-  const [dropdownOpen, setDropdownOpen] = useState(false);
+  // const [dropdownOpen, setDropdownOpen] = useState(false);
   const [postDropdownOpen, setPostDropdownOpen] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
@@ -29,7 +29,19 @@ function Header() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, [lastScrollY]);
 
+  useEffect(() => {
+    const handleEsc = (event) => {
+      if (event.key === "Escape") {
+        setIsSearchOpen(false);
+      }
+    };
+  
+    window.addEventListener("keydown", handleEsc);
+    return () => window.removeEventListener("keydown", handleEsc);
+  }, []);
+  
   return (
+    <>
 <header className={`bg-gray-300 text-black shadow-md sticky top-0 z-50 transition-transform duration-300 ${showHeader ? 'translate-y-0' : '-translate-y-full'}`}>
 {/* <div className="w-full h-[150px] bg-gray-300">
         <img
@@ -114,31 +126,52 @@ function Header() {
 
 </button>
 
-{/* Fullscreen Overlay with Card Modal */}
+
 {isSearchOpen && (
-  <div className="fixed inset-0 bg-black bg-opacity-70 flex justify-center items-center z-50">
-    <div className="relative bg-white rounded-2xl shadow-2xl w-full max-w-xl mx-4 p-6">
-      {/* Cancel Button */}
-      <button
-        onClick={() => setIsSearchOpen(false)}
-        className="absolute top-3 right-4 text-gray-600 hover:text-red-500 text-2xl font-bold focus:outline-none"
-        aria-label="Cancel"
+  <div
+    className="fixed inset-0 z-50 animate-fadeIn"
+    onClick={() => setIsSearchOpen(false)}
+  >
+    {/* Background Overlay */}
+    <div className="absolute inset-0 bg-black bg-opacity-70 transition-opacity duration-300 ease-in-out" />
+
+    {/* Modal Wrapper */}
+    <div className="absolute inset-0 flex justify-center items-start pt-28 px-4 sm:px-6">
+      <div
+        className="bg-white rounded-2xl shadow-2xl w-full max-w-xl p-6 sm:p-8 md:p-10 border border-blue-300 relative z-10"
+        onClick={(e) => e.stopPropagation()} // Prevent closing when clicking inside
       >
-        ×
-      </button>
+        {/* Cancel Button */}
+        <button
+          onClick={() => setIsSearchOpen(false)}
+          className="absolute top-4 right-4 text-gray-600 hover:text-red-500 text-2xl font-bold focus:outline-none"
+          aria-label="Close"
+        >
+          ×
+        </button>
 
-      <h2 className="text-xl font-semibold text-gray-800 mb-4">Search</h2>
+        {/* Modal Title */}
+        <h2 className="text-2xl font-bold text-gray-800 mb-6 text-center">
+          Search everything
+        </h2>
 
-      {/* Search Input */}
-      <input
-        type="text"
-        placeholder="Type to search..."
-        className="w-full px-4 py-1 text-lg border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
-        autoFocus
-      />
+        {/* Search Input */}
+        <input
+          type="text"
+          placeholder="Type to search..."
+          className="w-full px-4 py-3 text-lg border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
+          autoFocus
+        />
+
+        <p className="mt-4 text-sm text-gray-500 text-center">
+          Start typing to find what you need.
+        </p>
+      </div>
     </div>
   </div>
 )}
+
+
          <Link to="/facebook" className="hover:text-blue-800 text-blue-600">
             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
               <path d="M22 12a10 10 0 10-11.5 9.9v-7H8v-3h2.5V9.5a3.5 3.5 0 013.8-3.8h2.7v3H15a1 1 0 00-1 1V12h3l-.5 3h-2.5v7A10 10 0 0022 12z" />
@@ -182,34 +215,51 @@ function Header() {
 
       {/* Mobile Slide-In Navigation */}
       <div
-        className={`fixed top-0 left-0 h-full w-64 bg-[#1da1f2] transform transition-transform duration-300 ease-in-out z-40 sm:hidden ${menuOpen ? 'translate-x-0' : '-translate-x-full'}`}
+        className={`fixed top-0 left-0 h-full w-64 transform transition-transform duration-300 ease-in-out z-40 sm:hidden ${menuOpen ? 'translate-x-0' : '-translate-x-full'}`}
       >
-        <div className="p-4 space-y-2">
+        <div className="p-6 space-y-3 bg-blue-50 border border-blue-500 ">
           <Link to="/" className="block text-sm text-black hover:text-blue-500 py-1">Home</Link>
+          <hr className="border-t border-blue-300 w-full mb-4" />
+
           <Link to="/tanzania-jobs" className="block text-sm text-black hover:text-blue-500 py-1">Tanzania-Jobs</Link>
+          <hr className="border-t border-blue-300 w-full mb-4" />
+
           <Link to="/all-jobs" className="block text-sm text-black hover:text-blue-500 py-1">All-Jobs</Link>
+          <hr className="border-t border-blue-300 w-full mb-4" />
+
           <Link to="/tender" className="block text-sm text-black hover:text-blue-500 py-1">Tender</Link>
+          <hr className="border-t border-blue-300 w-full mb-4" />
 
           {/* Post Dropdown */}
           <div>
             <button onClick={() => setPostDropdownOpen(!postDropdownOpen)} className="block text-sm text-black hover:text-blue-500 py-1 w-full text-left">Post ▾</button>
             {postDropdownOpen && (
               <div className="pl-4">
+                <hr className="border-t border-blue-300 w-full mb-4" />
+
                 <Link to="/post-job" className="block text-sm text-black hover:text-blue-500 py-1">Post Job</Link>
+                <hr className="border-t border-blue-300 w-full mb-4" />
+
                 <Link to="/post-tender" className="block text-sm text-black hover:text-blue-500 py-1">Post Tender</Link>
               </div>
             )}
           </div>
+          <hr className="border-t border-blue-300 w-full mb-4" />
 
           <Link to="/advertise" className="block text-sm text-black hover:text-blue-500 py-1">Advertise</Link>
+          <hr className="border-t border-blue-300 w-full mb-4" />
+
           <Link to="/other" className="block text-sm text-black hover:text-blue-500 py-1">Other</Link>
 
-              
 
           
         </div>
+
+
+
       </div>
     </header>
+    </>
   );
 }
 
