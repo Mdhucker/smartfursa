@@ -7,14 +7,14 @@ import Trends from '../components/Trends';
 
 import { Link } from 'react-router-dom';
 
-import {
-  Briefcase,
-  FileText,
-  GraduationCap,
-  UserCheck,
-  Handshake,
-  Bell,
-} from 'lucide-react';
+// import {
+//   Briefcase,
+//   FileText,
+//   GraduationCap,
+//   UserCheck,
+//   Handshake,
+//   Bell,
+// } from 'lucide-react';
 
 function Home() {
   return (

@@ -5,7 +5,7 @@ import { Briefcase } from 'lucide-react';
 import { Globe } from "lucide-react";
 import { UserCheck } from "lucide-react";
 import { Eye } from "lucide-react";
-import { BookText } from "lucide-react";
+// import { BookText } from "lucide-react";
 
 
 function Trends() {
@@ -83,7 +83,6 @@ function Trends() {
           HESLB online Application
             </a>
           </div>
-          <hr className="border-t border-blue-200 w-full" />
 
 
           <hr className="border-t border-blue-200 w-full" />

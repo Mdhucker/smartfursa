@@ -1,4 +1,4 @@
-import { Result } from 'postcss';
+// import { Result } from 'postcss';
 import React from 'react';
 // import { BookText } from "lucide-react";
 import { Briefcase } from 'lucide-react';
@@ -86,7 +86,6 @@ function Jobs() {
           <hr className="border-t border-blue-200 w-full" />
 
 
-          <hr className="border-t border-blue-200 w-full" />
 
           <div className="flex items-center gap-2">
             <Eye className="w-4 h-4 text-blue-600" />
@@ -138,7 +137,6 @@ function Jobs() {
             Call for Work (Placements)
             </a>
           </div>
-          <hr className="border-t border-blue-200 w-full" />
 
 
           <hr className="border-t border-blue-200 w-full" />
