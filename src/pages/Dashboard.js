@@ -84,7 +84,7 @@ const ScrollSyncLayout = () => {
         <div className="p-4">Section 2</div>
         <div className="p-4">Section 3</div>
         <div className="p-4">Section 4</div>
-        <div className="p-4">Section 5</div> <div className="p-4">Main Content</div>
+        <div className="p-4">Section 5</div> 
         <div className="p-4">Section 1</div>
         <div className="p-4">Section 2</div>
         <div className="p-4">Section 3</div>

@@ -5,29 +5,29 @@ import { FaFacebook, FaTwitter, FaLinkedin, FaInstagram } from 'react-icons/fa';
 
 function Footer() {
   return (
-    <footer className="bg-gray-800 text-gray-300 py-6 mt-8 text-xs">
+    <footer className="bg-gray-300 text-black py-6 mt-8 text-xs">
       <div className="container mx-auto px-4">
         {/* Footer Content */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6 text-center md:text-left">
 
           {/* About Us Section */}
           <div>
-            <h3 className="text-sm font-semibold mb-2">About Us</h3>
-            <ul className="space-y-1">
-              <li><a href="/post-job" className="hover:text-yellow-300">Post A Job</a></li>
-              <li><a href="/post-tender" className="hover:text-yellow-300">Post a Tender</a></li>
-              <li><a href="/ess-utumishi" className="hover:text-yellow-300">ESS Utumishi</a></li>
-              <li><a href="/necta-results" className="hover:text-yellow-300">Matokeo ya NECTA</a></li>
-              <li><a href="/contact" className="hover:text-yellow-300">Contact Us</a></li>
+            <h3 className="text-base font-semibold mb-2">About Us</h3>
+            <ul className="space-y-1 list-disc pl-4">
+              <li><a href="/post-job" className="hover:text-blue-500">Post A Job</a></li>
+              <li><a href="/post-tender" className="hover:text-blue-500">Post a Tender</a></li>
+              <li><a href="/ess-utumishi" className="hover:text-blue-500">ESS Utumishi</a></li>
+              <li><a href="/necta-results" className="hover:text-blue-500">Matokeo ya NECTA</a></li>
+              <li><a href="/contact" className="hover:text-blue-500">Contact Us</a></li>
             </ul>
 
             <br/>
             <br/>
             <ul>
-              <h3 className="text-sm font-semibold mb-2">Connect With Us</h3>
-              <ul className="space-y-1">
-                <li><a href="mailto:maulidiclassName@gmail.com" className="hover:text-yellow-300">Email: project_x@gmail.com</a></li>
-                <li><a href="tel:+255XXXXXXXXX" className="hover:text-yellow-300">Phone: +255 686855352 </a></li>
+              <h3 className="text-base font-semibold mb-2">Connect With Us</h3>
+              <ul className="space-y-1 list-disc pl-4">
+                <li><a href="mailto:maulidiclassName@gmail.com" className="hover:text-blue-500">Email: project_x@gmail.com</a></li>
+                <li><a href="tel:+255XXXXXXXXX" className="hover:text-blue-500">Phone: +255 686855352 </a></li>
               </ul>
             </ul>
 
@@ -43,52 +43,52 @@ function Footer() {
 
           {/* Jobs by Categories */}
           <div>
-            <h3 className="text-sm font-semibold mb-2">Jobs by Categories</h3>
-            <ul className="space-y-1">
-              <li><a href="/category/accounting" className="hover:text-yellow-300">Accounting Jobs</a></li>
-              <li><a href="/category/administration" className="hover:text-yellow-300">Administration Jobs</a></li>
-              <li><a href="/category/banking-finance" className="hover:text-yellow-300">Banking and Finance Jobs</a></li>
-              <li><a href="/category/education" className="hover:text-yellow-300">Education and Teaching Jobs</a></li>
-              <li><a href="/category/engineering" className="hover:text-yellow-300">Engineering Jobs</a></li>
-              <li><a href="/category/government" className="hover:text-yellow-300">Government Jobs</a></li>
-              <li><a href="/category/hospitality-tourism" className="hover:text-yellow-300">Hospitality and Tourism Jobs</a></li>
-              <li><a href="/category/hr" className="hover:text-yellow-300">Human Resources Jobs</a></li>
-              <li><a href="/category/it" className="hover:text-yellow-300">IT Jobs</a></li>
-              <li><a href="/category/logistics" className="hover:text-yellow-300">Logistics & Transportation Jobs</a></li>
-              <li><a href="/category/mining" className="hover:text-yellow-300">Mining Jobs</a></li>
-              <li><a href="/category/ngo-social" className="hover:text-yellow-300">NGO and Social Work Jobs</a></li>
-              <li><a href="/category/procurement" className="hover:text-yellow-300">Procurement and Supply Jobs</a></li>
-              <li><a href="/category/sales-marketing" className="hover:text-yellow-300">Sales and Marketing Jobs</a></li>
+            <h3 className="text-base font-semibold mb-2">Jobs by Categories</h3>
+            <ul className="space-y-1 list-disc pl-4">
+              <li><a href="/category/accounting" className="hover:text-blue-500">Accounting Jobs</a></li>
+              <li><a href="/category/administration" className="hover:text-blue-500">Administration Jobs</a></li>
+              <li><a href="/category/banking-finance" className="hover:text-blue-500">Banking and Finance Jobs</a></li>
+              <li><a href="/category/education" className="hover:text-blue-500">Education and Teaching Jobs</a></li>
+              <li><a href="/category/engineering" className="hover:text-blue-500">Engineering Jobs</a></li>
+              <li><a href="/category/government" className="hover:text-blue-500">Government Jobs</a></li>
+              <li><a href="/category/hospitality-tourism" className="hover:text-blue-500">Hospitality and Tourism Jobs</a></li>
+              <li><a href="/category/hr" className="hover:text-blue-500">Human Resources Jobs</a></li>
+              <li><a href="/category/it" className="hover:text-blue-500">IT Jobs</a></li>
+              <li><a href="/category/logistics" className="hover:text-blue-500">Logistics & Transportation Jobs</a></li>
+              <li><a href="/category/mining" className="hover:text-blue-500">Mining Jobs</a></li>
+              <li><a href="/category/ngo-social" className="hover:text-blue-500">NGO and Social Work Jobs</a></li>
+              <li><a href="/category/procurement" className="hover:text-blue-500">Procurement and Supply Jobs</a></li>
+              <li><a href="/category/sales-marketing" className="hover:text-blue-500">Sales and Marketing Jobs</a></li>
             </ul>
           </div>
 
           {/* Other Services */}
           <div>
-            <h3 className="text-sm font-semibold mb-2">Other Services</h3>
-            <ul className="space-y-1">
-              <li><a href="/cv-writing" className="hover:text-yellow-300">CV Writing Service</a></li>
-              <li><a href="/za-bursaries" className="hover:text-yellow-300">ZA-Bursaries</a></li>
-              <li><a href="/scholarships" className="hover:text-yellow-300">Scholarships</a></li>
-              <li><a href="/career-guide" className="hover:text-yellow-300">Career Guide</a></li>
-              <li><a href="/necta-results" className="hover:text-yellow-300">NECTA Results</a></li>
-              <li><a href="/advertise" className="hover:text-yellow-300">Advertise Here</a></li>
-              <li><a href="/call-for-interview" className="hover:text-yellow-300">Call For Interview</a></li>
-              <li><a href="/ajira-portal" className="hover:text-yellow-300">Ajira Portal: Latest Jobs</a></li>
-              <li><a href="/clearing-jobs" className="hover:text-yellow-300">Clearing and Forwarding Jobs</a></li>
+            <h3 className="text-base font-semibold mb-2">Other Services</h3>
+            <ul className="space-y-1 list-disc pl-4">
+              <li><a href="/cv-writing" className="hover:text-blue-500">CV Writing Service</a></li>
+              <li><a href="/za-bursaries" className="hover:text-blue-500">ZA-Bursaries</a></li>
+              <li><a href="/scholarships" className="hover:text-blue-500">Scholarships</a></li>
+              <li><a href="/career-guide" className="hover:text-blue-500">Career Guide</a></li>
+              <li><a href="/necta-results" className="hover:text-blue-500">NECTA Results</a></li>
+              <li><a href="/advertise" className="hover:text-blue-500">Advertise Here</a></li>
+              <li><a href="/call-for-interview" className="hover:text-blue-500">Call For Interview</a></li>
+              <li><a href="/ajira-portal" className="hover:text-blue-500">Ajira Portal: Latest Jobs</a></li>
+              <li><a href="/clearing-jobs" className="hover:text-blue-500">Clearing and Forwarding Jobs</a></li>
             </ul>
           </div>
 
           {/* Jobs by Region */}
           <div>
-            <h3 className="text-sm font-semibold mb-2">Jobs</h3>
-            <ul className="space-y-1">
-              <li><a href="/tanzania-jobs" className="hover:text-yellow-300">Tanzania Jobs</a></li>
-              <li><a href="/zambia-jobs" className="hover:text-yellow-300">Jobs in Zambia</a></li>
-              <li><a href="/kenya-jobs" className="hover:text-yellow-300">Jobs in Kenya</a></li>
-              <li><a href="/tenders" className="hover:text-yellow-300">Tenders in Tanzania</a></li>
-              <li><a href="/other-jobs" className="hover:text-yellow-300">Other Countries Jobs</a></li>
-              <li><a href="/blog" className="hover:text-yellow-300">Blog</a></li>
-              <li><a href="/driver-jobs" className="hover:text-yellow-300">Driver Jobs</a></li>
+            <h3 className="text-base font-semibold mb-2">Jobs</h3>
+            <ul className="space-y-1 list-disc pl-4"> 
+              <li><a href="/tanzania-jobs" className="hover:text-blue-500">Tanzania Jobs</a></li>
+              <li><a href="/zambia-jobs" className="hover:text-blue-500">Jobs in Zambia</a></li>
+              <li><a href="/kenya-jobs" className="hover:text-blue-500">Jobs in Kenya</a></li>
+              <li><a href="/tenders" className="hover:text-blue-500">Tenders in Tanzania</a></li>
+              <li><a href="/other-jobs" className="hover:text-blue-500">Other Countries Jobs</a></li>
+              <li><a href="/blog" className="hover:text-blue-500">Blog</a></li>
+              <li><a href="/driver-jobs" className="hover:text-blue-500">Driver Jobs</a></li>
             </ul>
             <br/>
 
@@ -106,7 +106,7 @@ function Footer() {
               required
             />
            
-          <button type="button" className="text-white bg-yellow-600		 hover:bg-bg-yellow-412/90 focus:ring-4 focus:outline-none focus:ring-[#3b5998]/50 font-medium rounded-lg text-sm px-6 py-1 text-center inline-flex items-center dark:focus:ring-[#3b5998]/55 me-2 mb-2">
+          <button type="button" className="text-white bg-yellow-600		 hover:bg-bg-yellow-412/90 focus:ring-4 focus:outline-none focus:ring-[#3b5998]/50 font-medium rounded-lg text-base px-6 py-1 text-center inline-flex items-center dark:focus:ring-[#3b5998]/55 me-2 mb-2">
 
             Subscribe
             </button>
@@ -122,24 +122,27 @@ function Footer() {
         <div className="mt-6 text-center">
           {/* Social Media Icons */}
           <div className="flex justify-center space-x-2 mt-2">
-            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="hover:text-yellow-300">
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="hover:text-blue-500">
               <FaFacebook size={16} />
             </a>
-            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="hover:text-yellow-300">
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="hover:text-blue-500">
               <FaTwitter size={16} />
             </a>
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:text-yellow-300">
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:text-blue-500">
               <FaLinkedin size={16} />
             </a>
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-yellow-300">
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-blue-500">
               <FaInstagram size={16} />
             </a>
           </div> 
     
-    
+
 
           {/* Legal and About Summary */}
-        <section className="text-center text-gray-500 text-xs mt-12 border-t pt-6">
+        <section className="text-center text-gray-500 text-xs mt-12  pt-6 ">
+        <div className="w-1/2 mx-auto">
+    <hr className="border-t-2 border-blue-500 mb-4" />
+  </div>
           <p className="mt-2 max-w-xl mx-auto">
             <strong>Privacy Policy:</strong> Project X respects your privacy. We do not share personal information without your consent. Any data you submit is protected and used solely to improve your experience.
           </p>
@@ -154,6 +157,15 @@ function Footer() {
 
         </div>
       </div>
+
+      <div className="w-full h-[150px] bg-gray-300">
+        <img
+          src="/images/1.png"
+          alt="Ad Banner"
+          className="w-full h-full object-cover"
+        />
+      </div>
+
     </footer>
   );
 }

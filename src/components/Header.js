@@ -1,32 +1,61 @@
-import React, { useState } from 'react';
+// import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
 
 function Header() {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [postDropdownOpen, setPostDropdownOpen] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
+
+  const [showHeader, setShowHeader] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      if (currentScrollY < lastScrollY) {
+        setShowHeader(true); // Scrolling up
+      } else {
+        setShowHeader(false); // Scrolling down
+      }
+
+      setLastScrollY(currentScrollY);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [lastScrollY]);
 
   return (
+<header className={`bg-gray-300 text-black shadow-md sticky top-0 z-50 transition-transform duration-300 ${showHeader ? 'translate-y-0' : '-translate-y-full'}`}>
+{/* <div className="w-full h-[150px] bg-gray-300">
+        <img
+          src="/images/1.png"
+          alt="Ad Banner"
+          className="w-full h-full object-cover"
+        />
+      </div> */}
 
-    
-    <header className="bg-black text-white shadow-md sticky top-0 z-50">
-<section className="py-1 bg-gray-200">
-  <div className="container mx-auto flex justify-center">
-    <p className="text-xs font-medium text-black">
-      <span className="font-bold">New</span> — 
-      We have launched over 100+ opportunities and jobs at Project X! <span> </span>
-      <Link to="/new-blog" className="text-blue-600 hover:text-blue-800 inline-flex items-center">
-        Check out 
-        <svg className="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+
+
+      <section className="py-1 bg-gray-200">
+        <div className="container mx-auto flex justify-center">
+          <p className="text-xs font-medium text-black">
+            <span className="font-bold">New</span> — 
+            We have launched over 100+ opportunities and jobs at Project X! <span> </span>
+            <Link to="/new-blog" className="text-blue-600 hover:text-blue-800 inline-flex items-center">
+              Check out 
+              <svg className="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
                 <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
-        </svg>
-        
-      </Link>
-    </p>
-  </div>
-</section>
+              </svg>
+            </Link>
+          </p>
+        </div>
+      </section>
 
-      
       <div className="container mx-auto flex justify-between items-center px-4 py-2">
         {/* Logo */}
         <Link to="/">
@@ -38,60 +67,113 @@ function Header() {
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden sm:flex space-x-2 items-center">
-          <Link to="/" className="text-sm text-white hover:text-yellow-300 py-1">Results</Link>
-          <Link to="/tanzania-jobs" className="text-sm text-white hover:text-yellow-300 py-1">Tanzania-Jobs</Link>
-          <Link to="/all-jobs" className="text-sm text-white hover:text-yellow-300 py-1">All-Jobs</Link>
-          <Link to="/tender" className="text-sm text-white hover:text-yellow-300 py-1">Tender</Link>
+        {/* Wrapper for Centering */}
+        <div className="hidden sm:flex justify-end w-full pr-32">
+        <nav className="flex space-x-4 items-center">
+    <Link to="/" className="text-sm text-black hover:text-blue-500 py-1">HOME</Link>
+    <Link to="/" className="text-sm text-black hover:text-blue-500 py-1">RESULTS</Link>
+    <Link to="/tanzania-jobs" className="text-sm text-black hover:text-blue-500 py-1">TANZANIA-JOBS</Link>
+    <Link to="/all-jobs" className="text-sm text-black hover:text-blue-500 py-1">ALL-JOBS</Link>
+    <Link to="/tender" className="text-sm text-black hover:text-blue-500 py-1">TENDER</Link>
 
-          {/* Post Dropdown */}
-          <div
-            className="relative group"
-            onMouseEnter={() => setPostDropdownOpen(true)}
-            onMouseLeave={() => setPostDropdownOpen(false)}
-          >
-            <button className="text-sm text-white hover:text-yellow-300 focus:outline-none py-1">
-              Post
-            </button>
-            {postDropdownOpen && (
-              <div className="absolute mt-1 w-44 bg-white text-black border border-gray-300 rounded-xl shadow-xl z-50">
-                <Link to="/post-job" className="block px-4 py-2 text-sm hover:bg-blue-100 hover:text-blue-800">Post Job</Link>
-                <Link to="/post-tender" className="block px-4 py-2 text-sm hover:bg-blue-100 hover:text-blue-800">Post Tender</Link>
-              </div>
-            )}
-          </div>
-
-          <Link to="/advertise" className="text-sm text-white hover:text-yellow-300 py-1">Advertise</Link>
-          <Link to="/other" className="text-sm text-white hover:text-yellow-300 py-1">Other</Link>
-        </nav>
-
-        {/* Desktop MyAccount Top Right */}
-        <div className="hidden sm:block relative">
-          <div
-            className="relative group"
-            onMouseEnter={() => setDropdownOpen(true)}
-            onMouseLeave={() => setDropdownOpen(false)}
-          >
-            <button className="text-sm text-white hover:text-yellow-300 focus:outline-none py-1">
-              MyAccount
-            </button>
-            {dropdownOpen && (
-              <div className="absolute right-0 mt-1 w-48 bg-white text-black border border-gray-300 rounded-xl shadow-xl z-50">
-                <Link to="/login" className="block px-4 py-2 text-sm hover:bg-blue-100 hover:text-blue-800">Login</Link>
-                <Link to="/register" className="block px-4 py-2 text-sm hover:bg-blue-100 hover:text-blue-800">Register</Link>
-                <Link to="/logout" className="block px-4 py-2 text-sm hover:bg-blue-100 hover:text-blue-800">Logout</Link>
-                <Link to="/post-resume" className="block px-4 py-2 text-sm hover:bg-blue-100 hover:text-blue-800">Post Resume</Link>
-                <Link to="/post-cv" className="block px-4 py-2 text-sm hover:bg-blue-100 hover:text-blue-800">Post CV</Link>
-                <Link to="/post-job" className="block px-4 py-2 text-sm hover:bg-blue-100 hover:text-blue-800">Post Job Free</Link>
-                <Link to="/post-tender" className="block px-4 py-2 text-sm hover:bg-blue-100 hover:text-blue-800">Post a Tender</Link>
-              </div>
-            )}
-          </div>
+    {/* Post Dropdown */}
+    <div
+      className="relative group"
+      onMouseEnter={() => setPostDropdownOpen(true)}
+      onMouseLeave={() => setPostDropdownOpen(false)}
+    >
+      <button className="text-sm text-black hover:text-blue-500 focus:outline-none py-1">
+        POST
+      </button>
+      {postDropdownOpen && (
+        <div className="absolute mt-1 w-44 bg-white text-black border border-gray-300 rounded-xl shadow-xl z-50">
+          <Link to="/post-job" className="block px-4 py-2 text-sm hover:bg-blue-100 hover:text-blue-800">POST-JOB</Link>
+          <Link to="/post-tender" className="block px-4 py-2 text-sm hover:bg-blue-100 hover:text-blue-800">POST TENDER</Link>
         </div>
+      )}
+    </div>
 
+    <Link to="/advertise" className="text-sm text-black hover:text-blue-500 py-1">ADVERTISE</Link>
+    <Link to="/other" className="text-sm text-black hover:text-blue-500 py-1">OTHER</Link>
+  </nav>
+</div>
+
+
+        <div className="flex items-center gap-4 text-black">
+            {/* Search Button */}
+
+<button
+  onClick={() => setIsSearchOpen(true)}
+  className="flex items-center gap-5 w-full max-w-sm px-2 py-0.5 rounded-lg border border-blue-500 cursor-pointer hover:shadow-md transition duration-150"
+>
+
+  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+  </svg>
+  <span className="text-gray-500  ">Search...</span>
+
+</button>
+
+{/* Fullscreen Overlay with Card Modal */}
+{isSearchOpen && (
+  <div className="fixed inset-0 bg-black bg-opacity-70 flex justify-center items-center z-50">
+    <div className="relative bg-white rounded-2xl shadow-2xl w-full max-w-xl mx-4 p-6">
+      {/* Cancel Button */}
+      <button
+        onClick={() => setIsSearchOpen(false)}
+        className="absolute top-3 right-4 text-gray-600 hover:text-red-500 text-2xl font-bold focus:outline-none"
+        aria-label="Cancel"
+      >
+        ×
+      </button>
+
+      <h2 className="text-xl font-semibold text-gray-800 mb-4">Search</h2>
+
+      {/* Search Input */}
+      <input
+        type="text"
+        placeholder="Type to search..."
+        className="w-full px-4 py-1 text-lg border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
+        autoFocus
+      />
+    </div>
+  </div>
+)}
+         <Link to="/facebook" className="hover:text-blue-800 text-blue-600">
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M22 12a10 10 0 10-11.5 9.9v-7H8v-3h2.5V9.5a3.5 3.5 0 013.8-3.8h2.7v3H15a1 1 0 00-1 1V12h3l-.5 3h-2.5v7A10 10 0 0022 12z" />
+            </svg>
+          </Link>
+
+          {/* Twitter */}
+          <Link to="/twitter" className="hover:text-blue-600 text-black">
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M20.59 3H17.4l-4.4 5.62L8.59 3H3.41l6.79 9.01L3 21h3.19l5.01-6.39L17.4 21h5.19l-7.5-9.96L20.59 3z" />
+            </svg>
+          </Link>
+
+          {/* Notification (Alternative Icon) */}
+          <Link to="/notifications" className="flex items-center gap-2 hover:text-blue-600 text-black">
+            <svg className="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 14 20">
+              <path d="M12.133 10.632v-1.8A5.406 5.406 0 0 0 7.979 3.57.946.946 0 0 0 8 3.464V1.1a1 1 0 0 0-2 0v2.364a.946.946 0 0 0 .021.106 5.406 5.406 0 0 0-4.154 5.262v1.8C1.867 13.018 0 13.614 0 14.807 0 15.4 0 16 .538 16h12.924C14 16 14 15.4 14 14.807c0-1.193-1.867-1.789-1.867-4.175ZM3.823 17a3.453 3.453 0 0 0 6.354 0H3.823Z"/>
+            </svg>
+          </Link>
+
+          {/* Login */}
+          <Link to="/login" className="flex items-center gap-2 hover:text-blue-600">
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 17a1 1 0 001-1v-2a1 1 0 00-2 0v2a1 1 0 001 1z" />
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8V7a5 5 0 00-10 0v1M5 10h14v10H5V10z" />
+            </svg>
+            <span>Login</span>
+          </Link>
+          </div>
+
+          {/* Facebook */}
+         
         {/* Mobile Toggle */}
         <button
-          className="sm:hidden text-white focus:outline-none text-lg p-1 rounded hover:bg-blue-600"
+          className="sm:hidden text-black focus:outline-none text-lg p-1 rounded hover:bg-blue-600"
           onClick={() => setMenuOpen(!menuOpen)}
         >
           ☰
@@ -103,43 +185,30 @@ function Header() {
         className={`fixed top-0 left-0 h-full w-64 bg-[#1da1f2] transform transition-transform duration-300 ease-in-out z-40 sm:hidden ${menuOpen ? 'translate-x-0' : '-translate-x-full'}`}
       >
         <div className="p-4 space-y-2">
-          <Link to="/" className="block text-sm text-white hover:text-yellow-300 py-1">Home</Link>
-          <Link to="/tanzania-jobs" className="block text-sm text-white hover:text-yellow-300 py-1">Tanzania-Jobs</Link>
-          <Link to="/all-jobs" className="block text-sm text-white hover:text-yellow-300 py-1">All-Jobs</Link>
-          <Link to="/tender" className="block text-sm text-white hover:text-yellow-300 py-1">Tender</Link>
+          <Link to="/" className="block text-sm text-black hover:text-blue-500 py-1">Home</Link>
+          <Link to="/tanzania-jobs" className="block text-sm text-black hover:text-blue-500 py-1">Tanzania-Jobs</Link>
+          <Link to="/all-jobs" className="block text-sm text-black hover:text-blue-500 py-1">All-Jobs</Link>
+          <Link to="/tender" className="block text-sm text-black hover:text-blue-500 py-1">Tender</Link>
 
           {/* Post Dropdown */}
           <div>
-            <button onClick={() => setPostDropdownOpen(!postDropdownOpen)} className="block text-sm text-white hover:text-yellow-300 py-1 w-full text-left">Post ▾</button>
+            <button onClick={() => setPostDropdownOpen(!postDropdownOpen)} className="block text-sm text-black hover:text-blue-500 py-1 w-full text-left">Post ▾</button>
             {postDropdownOpen && (
               <div className="pl-4">
-                <Link to="/post-job" className="block text-sm text-white hover:text-yellow-300 py-1">Post Job</Link>
-                <Link to="/post-tender" className="block text-sm text-white hover:text-yellow-300 py-1">Post Tender</Link>
+                <Link to="/post-job" className="block text-sm text-black hover:text-blue-500 py-1">Post Job</Link>
+                <Link to="/post-tender" className="block text-sm text-black hover:text-blue-500 py-1">Post Tender</Link>
               </div>
             )}
           </div>
 
-          <Link to="/advertise" className="block text-sm text-white hover:text-yellow-300 py-1">Advertise</Link>
-          <Link to="/other" className="block text-sm text-white hover:text-yellow-300 py-1">Other</Link>
+          <Link to="/advertise" className="block text-sm text-black hover:text-blue-500 py-1">Advertise</Link>
+          <Link to="/other" className="block text-sm text-black hover:text-blue-500 py-1">Other</Link>
 
-          {/* MyAccount Dropdown */}
-          <div>
-            <button onClick={() => setDropdownOpen(!dropdownOpen)} className="block text-sm text-white hover:text-yellow-300 py-1 w-full text-left">MyAccount ▾</button>
-            {dropdownOpen && (
-              <div className="pl-4">
-                <Link to="/login" className="block text-sm text-white hover:text-yellow-300 py-1">Login</Link>
-                <Link to="/register" className="block text-sm text-white hover:text-yellow-300 py-1">Register</Link>
-                <Link to="/logout" className="block text-sm text-white hover:text-yellow-300 py-1">Logout</Link>
-                <Link to="/post-resume" className="block text-sm text-white hover:text-yellow-300 py-1">Post Resume</Link>
-                <Link to="/post-cv" className="block text-sm text-white hover:text-yellow-300 py-1">Post CV</Link>
-                <Link to="/post-job" className="block text-sm text-white hover:text-yellow-300 py-1">Post Job Free</Link>
-                <Link to="/post-tender" className="block text-sm text-white hover:text-yellow-300 py-1">Post a Tender</Link>
-              </div>
-            )}
-          </div>
+              
+
+          
         </div>
       </div>
-      
     </header>
   );
 }
