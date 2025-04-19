@@ -68,7 +68,7 @@ function Trends() {
 
 
 <div className="container mx-auto px-4">
-  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-1">
     {/* First Card */}
     <div className="bg-[#FEF9C3] border border-blue-300 rounded-xl p-6 my-5">
       <div className="w-full">
