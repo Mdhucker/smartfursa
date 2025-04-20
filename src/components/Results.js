@@ -58,10 +58,10 @@ function Results() {
 </div>
 
 
-<div className="container mx-auto px-4">
+<div className="container mx-auto px-1">
   <div className="grid grid-cols-1 md:grid-cols-2 gap-1">
     {/* First Card */}
-    <div className="bg-[#DCFCE7] border border-blue-300 rounded-xl p-6 my-5">
+    <div className="bg-[#DCFCE7] border border-blue-300 rounded-md p-6 my-5">
       <div className="w-full">
         <h2 className="text-xl md:text-2xl font-bold text-blue-600 mb-3">
           NECTA Results
@@ -119,7 +119,7 @@ function Results() {
     </div>
 
     {/* Second Card */}
-    <div className="bg-[#DCFCE7] border border-blue-300 rounded-xl p-6 my-5">
+    <div className="bg-[#DCFCE7] border border-blue-300 rounded-md p-6 my-5">
       <div className="w-full">
         <h2 className="text-xl md:text-2xl font-bold text-blue-600 mb-3">
           More NECTA Results
@@ -185,7 +185,7 @@ function Results() {
     </div>
 
     {/* Third Card */}
-    <div className="bg-[#DCFCE7] border border-blue-300 rounded-xl p-6 my-5">
+    <div className="bg-[#DCFCE7] border border-blue-300 rounded-md p-6 my-5">
       <div className="w-full">
         <h2 className="text-xl md:text-2xl font-bold text-blue-600 mb-4">
           EAT Africa Results
@@ -243,7 +243,7 @@ function Results() {
     </div>
 
     {/* Fourth Card */}
-    <div className="bg-[#DCFCE7] border border-blue-300 rounded-xl p-6 my-5">
+    <div className="bg-[#DCFCE7] border border-blue-300 rounded-md p-6 my-5">
       <div className="w-full">
         <h2 className="text-xl md:text-2xl font-bold text-blue-600 mb-3">
           Southern Africa Results
@@ -279,7 +279,7 @@ function Results() {
 
 
 {/* Third Card */}
-<div className="bg-[#DCFCE7] border border-blue-300 rounded-xl p-6 my-5">
+<div className="bg-[#DCFCE7] border border-blue-300 rounded-md p-6 my-5">
       <div className="w-full">
         <h2 className="text-xl md:text-2xl font-bold text-blue-600 mb-4">
           EAT Africa Results
@@ -337,7 +337,7 @@ function Results() {
     </div>
 
     {/* Fourth Card */}
-    <div className="bg-[#DCFCE7] border border-blue-300 rounded-xl p-6 my-5">
+    <div className="bg-[#DCFCE7] border border-blue-300 rounded-md p-6 my-5">
       <div className="w-full">
         <h2 className="text-xl md:text-2xl font-bold text-blue-600 mb-3">
           Southern Africa Results

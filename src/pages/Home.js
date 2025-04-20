@@ -27,10 +27,11 @@ function Home() {
 
           {/* Hero Section */}
           <section className="p-8 sm:p-20 rounded-lg text-center space-y-2">
-            <h2 className="text-3xl sm:text-4xl  text-blue-500 mb-3">
-              Real News. Real Jobs. Real Opportunities.<br />
-              The more the information, the better your life becomes.
-            </h2>
+          <h2 className="text-xl sm:text-3xl md:text-4xl text-blue-500 mb-4 text-center leading-relaxed px-4">
+            Real News. Real Jobs. Real Opportunities. <br />
+            The more the information, the better your life becomes.
+          </h2>
+
             <p className="text-base sm:text-lg text-gray-700 max-w-2xl mx-auto text-center leading-relaxed mt-4">
               Project X connects you with opportunities in Tanzania and beyond — from jobs and tenders to scholarships and programs that empower all people.
             </p>

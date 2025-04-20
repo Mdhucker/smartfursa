@@ -67,10 +67,10 @@ function Trends() {
 
 
 
-<div className="container mx-auto px-4">
+<div className="container mx-auto px-1">
   <div className="grid grid-cols-1 md:grid-cols-2 gap-1">
     {/* First Card */}
-    <div className="bg-[#FEF9C3] border border-blue-300 rounded-xl p-6 my-5">
+    <div className="bg-[#FEF9C3] border border-blue-300 rounded-md p-6 my-5">
       <div className="w-full">
         <h2 className="text-xl md:text-2xl font-bold text-blue-600 mb-3">
         HESLB
@@ -98,7 +98,7 @@ function Trends() {
     </div>
 
     {/* Second Card */}
-    <div className="bg-[#FEF9C3] border border-blue-300 rounded-xl p-6 my-5">
+    <div className="bg-[#FEF9C3] border border-blue-300 rounded-md p-6 my-5">
       <div className="w-full">
         <h2 className="text-xl md:text-2xl font-bold text-blue-600 mb-3">
         TAMISEMI
@@ -124,7 +124,7 @@ function Trends() {
     </div>
 
     {/* Third Card */}
-    <div className="bg-[#FEF9C3] border border-blue-300 rounded-xl p-6 my-5">
+    <div className="bg-[#FEF9C3] border border-blue-300 rounded-md p-6 my-5">
       <div className="w-full">
         <h2 className="text-xl md:text-2xl font-bold text-blue-600 mb-4">
         TAMISEMI
@@ -152,7 +152,7 @@ function Trends() {
     </div>
 
     {/* Fourth Card */}
-    <div className="bg-[#FEF9C3] border border-blue-300 rounded-xl p-6 my-5">
+    <div className="bg-[#FEF9C3] border border-blue-300 rounded-md p-6 my-5">
       <div className="w-full">
         <h2 className="text-xl md:text-2xl font-bold text-blue-600 mb-3">
         ADMISSION
@@ -181,7 +181,7 @@ function Trends() {
 
 
 {/* Third Card */}
-<div className="bg-[#FEF9C3] border border-blue-300 rounded-xl p-6 my-5">
+<div className="bg-[#FEF9C3] border border-blue-300 rounded-md p-6 my-5">
       <div className="w-full">
         <h2 className="text-xl md:text-2xl font-bold text-blue-600 mb-4">
         University of Dodoma
@@ -210,7 +210,7 @@ function Trends() {
     </div>
 
     {/* Fourth Card */}
-    <div className="bg-[#FEF9C3] border border-blue-300 rounded-xl p-6 my-5">
+    <div className="bg-[#FEF9C3] border border-blue-300 rounded-md p-6 my-5">
       <div className="w-full">
         <h2 className="text-xl md:text-2xl font-bold text-blue-600 mb-3">
         University of Dar es Salaam

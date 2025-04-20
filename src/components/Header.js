@@ -80,7 +80,7 @@ function Header() {
 
         {/* Desktop Navigation */}
         {/* Wrapper for Centering */}
-        <div className="hidden sm:flex justify-end w-full pr-32">
+        <div className="hidden sm:flex justify-end w-full pr-72">
         <nav className="flex space-x-4 items-center">
     <Link to="/" className="text-sm text-black hover:text-blue-500 py-1">HOME</Link>
     <Link to="/" className="text-sm text-black hover:text-blue-500 py-1">RESULTS</Link>
@@ -107,6 +107,8 @@ function Header() {
 
     <Link to="/advertise" className="text-sm text-black hover:text-blue-500 py-1">ADVERTISE</Link>
     <Link to="/other" className="text-sm text-black hover:text-blue-500 py-1">OTHER</Link>
+    <Link to="/other" className="text-sm text-black hover:text-blue-500 py-1">LOGIN</Link>
+
   </nav>
 </div>
 
@@ -116,13 +118,13 @@ function Header() {
 
 <button
   onClick={() => setIsSearchOpen(true)}
-  className="flex items-center gap-5 w-full max-w-sm px-2 py-0.5 rounded-lg border border-blue-500 cursor-pointer hover:shadow-md transition duration-150"
+  // className="flex items-center gap-5 w-full max-w-sm px-2 py-0.5 rounded-lg border border-blue-500 cursor-pointer hover:shadow-md transition duration-150"
 >
 
   <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
   </svg>
-  <span className="text-gray-500  ">Search...</span>
+  {/* <span className="text-gray-500  ">Search...</span> */}
 
 </button>
 
@@ -138,7 +140,7 @@ function Header() {
     {/* Modal Wrapper */}
     <div className="absolute inset-0 flex justify-center items-start pt-28 px-4 sm:px-6">
       <div
-        className="bg-white rounded-2xl shadow-2xl w-full max-w-xl p-6 sm:p-8 md:p-10 border border-blue-300 relative z-10"
+        className="bg-white  shadow-2xl w-full max-w-xl p-6 sm:p-8 md:p-10 border border-blue-500 relative z-10"
         onClick={(e) => e.stopPropagation()} // Prevent closing when clicking inside
       >
         {/* Cancel Button */}
@@ -147,11 +149,11 @@ function Header() {
           className="absolute top-4 right-4 text-gray-600 hover:text-red-500 text-2xl font-bold focus:outline-none"
           aria-label="Close"
         >
-          ×
+          X
         </button>
 
         {/* Modal Title */}
-        <h2 className="text-2xl font-bold text-gray-800 mb-6 text-center">
+        <h2 className="text-2xl font-bold text-blue-500 mb-6 text-center">
           Search everything
         </h2>
 
@@ -192,31 +194,25 @@ function Header() {
             </svg>
           </Link>
 
-          {/* Login */}
-          <Link to="/login" className="flex items-center gap-2 hover:text-blue-600">
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 17a1 1 0 001-1v-2a1 1 0 00-2 0v2a1 1 0 001 1z" />
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8V7a5 5 0 00-10 0v1M5 10h14v10H5V10z" />
-            </svg>
-            <span>Login</span>
-          </Link>
+          
           </div>
 
-          {/* Facebook */}
          
         {/* Mobile Toggle */}
         <button
-          className="sm:hidden text-black focus:outline-none text-lg p-1 rounded hover:bg-blue-600"
+          className="sm:hidden text-black focus:outline-none text-lg p-1 "
           onClick={() => setMenuOpen(!menuOpen)}
         >
           ☰
         </button>
+
       </div>
 
       {/* Mobile Slide-In Navigation */}
       <div
         className={`fixed top-0 left-0 h-full w-64 transform transition-transform duration-300 ease-in-out z-40 sm:hidden ${menuOpen ? 'translate-x-0' : '-translate-x-full'}`}
-      >
+      >        
+
         <div className="p-6 space-y-3 bg-blue-50 border border-blue-500 ">
           <Link to="/" className="block text-sm text-black hover:text-blue-500 py-1">Home</Link>
           <hr className="border-t border-blue-300 w-full mb-4" />
@@ -248,6 +244,15 @@ function Header() {
 
           <Link to="/advertise" className="block text-sm text-black hover:text-blue-500 py-1">Advertise</Link>
           <hr className="border-t border-blue-300 w-full mb-4" />
+          <Link to="/login" className="flex items-center gap-2 hover:text-blue-600">
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 17a1 1 0 001-1v-2a1 1 0 00-2 0v2a1 1 0 001 1z" />
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8V7a5 5 0 00-10 0v1M5 10h14v10H5V10z" />
+            </svg>
+            <span>Login</span>
+          </Link>
+          <hr className="border-t border-blue-300 w-full mb-4" />
+
 
           <Link to="/other" className="block text-sm text-black hover:text-blue-500 py-1">Other</Link>
 
