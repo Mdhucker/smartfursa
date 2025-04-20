@@ -1,16 +1,8 @@
 
 import React from 'react';
-// import { BookText } from "lucide-react";
-import { Briefcase } from 'lucide-react';
-import { Globe } from "lucide-react";
-import { UserCheck } from "lucide-react";
-import { Eye } from "lucide-react";
-// import { BookText } from "lucide-react";
 
-
+import { UserCheck, Eye,Globe, Briefcase  } from "lucide-react";
 function Trends() {
-
-
   return (
     <>
     
@@ -59,13 +51,6 @@ function Trends() {
     </div>
   </div>
 </div>
-
-
-
-
-
-
-
 
 <div className="container mx-auto px-1">
   <div className="grid grid-cols-1 md:grid-cols-2 gap-1">
@@ -191,14 +176,11 @@ function Trends() {
           <div className="flex items-center gap-3">
           <Globe className="w-5 h-5 text-blue-600" />
             <a href="/eat-africa/form-one" className="text-blue-600 hover:underline">
-            About University of Dodoma            </a>
+            About University of Dodoma   
+                     
+            </a>
           </div>
           <hr className="border-t border-blue-200 w-full" />
-
-         
-          
-          
-
           <div className="flex items-center gap-2">
             <Eye className="w-4 h-4 text-blue-600" />
             <a href="/necta/form-four" className="text-blue-600 hover:underline">
@@ -224,9 +206,6 @@ function Trends() {
             </a>
           </div>
           <hr className="border-t border-blue-200 w-full" />
-
-
-         
           <div className="flex items-center gap-2">
             <Eye className="w-4 h-4 text-blue-600" />
             <a href="/necta/form-four" className="text-blue-600 hover:underline">
@@ -238,10 +217,6 @@ function Trends() {
     </div>
   </div>
 </div>
-
-
-
-
     </>
     
   );

@@ -7,21 +7,12 @@ import Trends from '../components/Trends';
 
 import { Link } from 'react-router-dom';
 
-// import {
-//   Briefcase,
-//   FileText,
-//   GraduationCap,
-//   UserCheck,
-//   Handshake,
-//   Bell,
-// } from 'lucide-react';
-
 function Home() {
   return (
-    <>
+    <>        <Header />
+
       <div className="min-h-screen flex flex-col">
 
-        <Header />
 
         <main className="w-full max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
 
@@ -43,14 +34,14 @@ function Home() {
     className="w-full sm:w-auto text-white bg-blue-500 focus:ring-4 flex-wrap focus:outline-none focus:ring-green-700 font-medium rounded-lg text-sm sm:text-base px-6 py-3 text-center inline-flex items-center justify-center"
   >
     Explore Opportunity
-
-    <path
+<path
       stroke="currentColor"
       strokeLinecap="round"
       strokeLinejoin="round"
       strokeWidth="2"
       d="M1 5h12m0 0L9 1m4 4L9 9"
     />
+    
   </button>
 
     <button
@@ -61,16 +52,19 @@ function Home() {
 
       Get Started Now
       </Link>
-
       <path
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
         strokeWidth="2"
         d="M1 5h12m0 0L9 1m4 4L9 9"
-      />
+      />      
+
     </button>
 </div>
+
+
+
 
           </section>
 
@@ -107,7 +101,7 @@ function Home() {
                 <div className="relative w-full md:w-2/3">
                   <span className="absolute inset-y-0 left-0 flex items-center pl-3">
                     <svg className="w-5 h-5 text-blue-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8m-18 8h18a2 2 0 002-2V8a2 2 0 00-2-2H3a2 2 0 00-2 2v6a2 2 0 002 2z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8m-18 8h18a2 2 0 002-2V8a2 2 0 00-2-2H3a2 2 0 00-2 2v6a2 2 0 002 2z" />
                     </svg>
                   </span>
                   <input

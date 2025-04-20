@@ -40,16 +40,46 @@ function Header() {
     return () => window.removeEventListener("keydown", handleEsc);
   }, []);
   
+  useEffect(() => {
+    if (isSearchOpen) {
+      // Disable horizontal scroll only
+      document.body.style.overflowX = 'hidden';
+    } else {
+      // Restore horizontal scroll
+      document.body.style.overflowX = 'auto';
+    }
+  
+    return () => {
+      document.body.style.overflowX = 'auto';
+    };
+  }, [isSearchOpen]);
+  
+  
+
+  useEffect(() => {
+    if (isSearchOpen || menuOpen) {
+      // Disable horizontal scrolling only
+      document.body.style.overflowX = 'hidden';
+    } else {
+      // Restore horizontal scrolling
+      document.body.style.overflowX = 'auto';
+    }
+
+    return () => {
+      document.body.style.overflowX = 'auto';
+    };
+  }, [isSearchOpen, menuOpen]);
+
   return (
     <>
-<header className={`bg-gray-300 text-black shadow-md sticky top-0 z-50 transition-transform duration-300 ${showHeader ? 'translate-y-0' : '-translate-y-full'}`}>
-{/* <div className="w-full h-[150px] bg-gray-300">
+<header className={`bg-gray-300 text-black shadow-md sticky top-0 z-30 transition-transform duration-300 ${showHeader ? 'translate-y-0' : '-translate-y-full'}`}>
+<div className="w-full h-[150px] bg-gray-300">
         <img
           src="/images/1.png"
           alt="Ad Banner"
           className="w-full h-full object-cover"
         />
-      </div> */}
+      </div>
 
 
 
@@ -82,23 +112,23 @@ function Header() {
         {/* Wrapper for Centering */}
         <div className="hidden sm:flex justify-end w-full pr-72">
         <nav className="flex space-x-4 items-center">
-    <Link to="/" className="text-sm text-black hover:text-blue-500 py-1">HOME</Link>
-    <Link to="/" className="text-sm text-black hover:text-blue-500 py-1">RESULTS</Link>
-    <Link to="/tanzania-jobs" className="text-sm text-black hover:text-blue-500 py-1">TANZANIA-JOBS</Link>
-    <Link to="/all-jobs" className="text-sm text-black hover:text-blue-500 py-1">ALL-JOBS</Link>
-    <Link to="/tender" className="text-sm text-black hover:text-blue-500 py-1">TENDER</Link>
+            <Link to="/" className="text-sm text-black hover:text-blue-500 py-1">HOME</Link>
+            <Link to="/" className="text-sm text-black hover:text-blue-500 py-1">RESULTS</Link>
+            <Link to="/tanzania-jobs" className="text-sm text-black hover:text-blue-500 py-1">TANZANIA-JOBS</Link>
+            <Link to="/all-jobs" className="text-sm text-black hover:text-blue-500 py-1">ALL-JOBS</Link>
+            <Link to="/tender" className="text-sm text-black hover:text-blue-500 py-1">TENDER</Link>
 
-    {/* Post Dropdown */}
-    <div
-      className="relative group"
-      onMouseEnter={() => setPostDropdownOpen(true)}
-      onMouseLeave={() => setPostDropdownOpen(false)}
+            {/* Post Dropdown */}
+            <div
+              className="relative group"
+              onMouseEnter={() => setPostDropdownOpen(true)}
+              onMouseLeave={() => setPostDropdownOpen(false)}
     >
       <button className="text-sm text-black hover:text-blue-500 focus:outline-none py-1">
         POST
       </button>
       {postDropdownOpen && (
-        <div className="absolute mt-1 w-44 bg-white text-black border border-gray-300 rounded-xl shadow-xl z-50">
+        <div className="absolute mt-1 w-44 bg-white text-black border border-gray-300 rounded-xl shadow-xl z-30">
           <Link to="/post-job" className="block px-4 py-2 text-sm hover:bg-blue-100 hover:text-blue-800">POST-JOB</Link>
           <Link to="/post-tender" className="block px-4 py-2 text-sm hover:bg-blue-100 hover:text-blue-800">POST TENDER</Link>
         </div>
@@ -116,62 +146,59 @@ function Header() {
         <div className="flex items-center gap-4 text-black">
             {/* Search Button */}
 
-<button
-  onClick={() => setIsSearchOpen(true)}
-  // className="flex items-center gap-5 w-full max-w-sm px-2 py-0.5 rounded-lg border border-blue-500 cursor-pointer hover:shadow-md transition duration-150"
->
-
-  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-  </svg>
-  {/* <span className="text-gray-500  ">Search...</span> */}
-
-</button>
 
 
-{isSearchOpen && (
-  <div
-    className="fixed inset-0 z-50 animate-fadeIn"
-    onClick={() => setIsSearchOpen(false)}
-  >
-    {/* Background Overlay */}
-    <div className="absolute inset-0 bg-black bg-opacity-70 transition-opacity duration-300 ease-in-out" />
+              <button
+                onClick={() => setIsSearchOpen(true)}
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                </svg>
+              </button>
 
-    {/* Modal Wrapper */}
-    <div className="absolute inset-0 flex justify-center items-start pt-28 px-4 sm:px-6">
-      <div
-        className="bg-white  shadow-2xl w-full max-w-xl p-6 sm:p-8 md:p-10 border border-blue-500 relative z-10"
-        onClick={(e) => e.stopPropagation()} // Prevent closing when clicking inside
-      >
-        {/* Cancel Button */}
-        <button
-          onClick={() => setIsSearchOpen(false)}
-          className="absolute top-4 right-4 text-gray-600 hover:text-red-500 text-2xl font-bold focus:outline-none"
-          aria-label="Close"
-        >
-          X
-        </button>
+              {isSearchOpen && (
+              <div
+              className="fixed top-0 left-0 w-screen h-screen overflow-hidden z-50 animate-fadeIn"
+              onClick={() => setIsSearchOpen(false)}
+            >
+                  {/* Background Overlay */}
+                  <div className="relative inset-0 bg-black bg-opacity-11 transition-opacity duration-300 ease-in-out" />
 
-        {/* Modal Title */}
-        <h2 className="text-2xl font-bold text-blue-500 mb-6 text-center">
-          Search everything
-        </h2>
+                  {/* Modal Wrapper */}
+                  <div className="fixed inset-0 flex justify-center items-start pt-28 px-4 sm:px-6">
+                    <div
+                      className="bg-white  shadow-2xl w-full max-w-xl p-6 sm:p-8 md:p-10 border border-blue-500 relative z-10"
+                      onClick={(e) => e.stopPropagation()} // Prevent closing when clicking inside
+                    >
+                      {/* Cancel Button */}
+                      <button
+                        onClick={() => setIsSearchOpen(false)}
+                        className="absolute top-4 right-4 text-gray-600 hover:text-red-500 text-2xl font-bold focus:outline-none"
+                        aria-label="Close"
+                      >
+                        X
+                      </button>
 
-        {/* Search Input */}
-        <input
-          type="text"
-          placeholder="Type to search..."
-          className="w-full px-4 py-3 text-lg border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
-          autoFocus
-        />
+                      {/* Modal Title */}
+                      <h2 className="text-2xl font-bold text-blue-500 mb-6 text-center">
+                        Search everything
+                      </h2>
 
-        <p className="mt-4 text-sm text-gray-500 text-center">
-          Start typing to find what you need.
-        </p>
-      </div>
-    </div>
-  </div>
-)}
+                      {/* Search Input */}
+                      <input
+                        type="text"
+                        placeholder="Type to search..."
+                        className="w-full px-4 py-3 text-lg border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
+                        autoFocus
+                      />
+
+                      <p className="mt-4 text-sm text-gray-500 text-center">
+                        Start typing to find what you need.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              )}
 
 
          <Link to="/facebook" className="hover:text-blue-800 text-blue-600">
@@ -197,68 +224,77 @@ function Header() {
           
           </div>
 
-         
-        {/* Mobile Toggle */}
-        <button
-          className="sm:hidden text-black focus:outline-none text-lg p-1 "
-          onClick={() => setMenuOpen(!menuOpen)}
-        >
-          ☰
-        </button>
-
-      </div>
-
-      {/* Mobile Slide-In Navigation */}
-      <div
-        className={`fixed top-0 left-0 h-full w-64 transform transition-transform duration-300 ease-in-out z-40 sm:hidden ${menuOpen ? 'translate-x-0' : '-translate-x-full'}`}
-      >        
-
-        <div className="p-6 space-y-3 bg-blue-50 border border-blue-500 ">
-          <Link to="/" className="block text-sm text-black hover:text-blue-500 py-1">Home</Link>
-          <hr className="border-t border-blue-300 w-full mb-4" />
-
-          <Link to="/tanzania-jobs" className="block text-sm text-black hover:text-blue-500 py-1">Tanzania-Jobs</Link>
-          <hr className="border-t border-blue-300 w-full mb-4" />
-
-          <Link to="/all-jobs" className="block text-sm text-black hover:text-blue-500 py-1">All-Jobs</Link>
-          <hr className="border-t border-blue-300 w-full mb-4" />
-
-          <Link to="/tender" className="block text-sm text-black hover:text-blue-500 py-1">Tender</Link>
-          <hr className="border-t border-blue-300 w-full mb-4" />
-
-          {/* Post Dropdown */}
-          <div>
-            <button onClick={() => setPostDropdownOpen(!postDropdownOpen)} className="block text-sm text-black hover:text-blue-500 py-1 w-full text-left">Post ▾</button>
-            {postDropdownOpen && (
-              <div className="pl-4">
-                <hr className="border-t border-blue-300 w-full mb-4" />
-
-                <Link to="/post-job" className="block text-sm text-black hover:text-blue-500 py-1">Post Job</Link>
-                <hr className="border-t border-blue-300 w-full mb-4" />
-
-                <Link to="/post-tender" className="block text-sm text-black hover:text-blue-500 py-1">Post Tender</Link>
+                      
+                  {/* Mobile Toggle */}
+              <button
+              
+                className="sm:hidden text-black focus:outline-none text-lg p-1"
+                onClick={() => setMenuOpen(!menuOpen)}
+              >
+                ☰
+              </button>
               </div>
-            )}
+
+              {/* Overlay Background (Click to close the menu) */}
+              {menuOpen && (
+                <div
+                  className="fixed top-0 left-0 w-screen h-screen overflow-hidden z-50 animate-fadeIn"
+                  onClick={() => setMenuOpen(false)}
+                />
+              )}
+
+        {/* Mobile Slide-In Navigation */}
+        <div
+          className={`fixed top-0 left-0 h-full w-64 transform transition-transform duration-300 ease-in-out z-40 sm:hidden ${
+            menuOpen ? 'translate-x-0' : '-translate-x-full'
+          }`}
+          onClick={(e) => e.stopPropagation()} // Prevent closing when clicking inside the menu
+        >
+          <div className="p-6 space-y-3 bg-blue-50 border border-blue-500 ">
+            <Link to="/" className="block text-sm text-black hover:text-blue-500 py-1">Home</Link>
+            <hr className="border-t border-blue-300 w-full mb-4" />
+
+            <Link to="/tanzania-jobs" className="block text-sm text-black hover:text-blue-500 py-1">Tanzania-Jobs</Link>
+            <hr className="border-t border-blue-300 w-full mb-4" />
+
+            <Link to="/all-jobs" className="block text-sm text-black hover:text-blue-500 py-1">All-Jobs</Link>
+            <hr className="border-t border-blue-300 w-full mb-4" />
+
+            <Link to="/tender" className="block text-sm text-black hover:text-blue-500 py-1">Tender</Link>
+            <hr className="border-t border-blue-300 w-full mb-4" />
+
+            {/* Post Dropdown */}
+            <div>
+              <button onClick={() => setPostDropdownOpen(!postDropdownOpen)} className="block text-sm text-black hover:text-blue-500 py-1 w-full text-left">
+                Post ▾
+              </button>
+              {postDropdownOpen && (
+                <div className="pl-4">
+                  <hr className="border-t border-blue-300 w-full mb-4" />
+
+                  <Link to="/post-job" className="block text-sm text-black hover:text-blue-500 py-1">Post Job</Link>
+                  <hr className="border-t border-blue-300 w-full mb-4" />
+
+                  <Link to="/post-tender" className="block text-sm text-black hover:text-blue-500 py-1">Post Tender</Link>
+                </div>
+              )}
+            </div>
+            <hr className="border-t border-blue-300 w-full mb-4" />
+
+            <Link to="/advertise" className="block text-sm text-black hover:text-blue-500 py-1">Advertise</Link>
+            <hr className="border-t border-blue-300 w-full mb-4" />
+
+            <Link to="/login" className="flex items-center gap-2 hover:text-blue-600">
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 17a1 1 0 001-1v-2a1 1 0 00-2 0v2a1 1 0 001 1z" />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8V7a5 5 0 00-10 0v1M5 10h14v10H5V10z" />
+              </svg>
+              <span>Login</span>
+            </Link>
+            <hr className="border-t border-blue-300 w-full mb-4" />
+
+            <Link to="/other" className="block text-sm text-black hover:text-blue-500 py-1">Other</Link>
           </div>
-          <hr className="border-t border-blue-300 w-full mb-4" />
-
-          <Link to="/advertise" className="block text-sm text-black hover:text-blue-500 py-1">Advertise</Link>
-          <hr className="border-t border-blue-300 w-full mb-4" />
-          <Link to="/login" className="flex items-center gap-2 hover:text-blue-600">
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 17a1 1 0 001-1v-2a1 1 0 00-2 0v2a1 1 0 001 1z" />
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8V7a5 5 0 00-10 0v1M5 10h14v10H5V10z" />
-            </svg>
-            <span>Login</span>
-          </Link>
-          <hr className="border-t border-blue-300 w-full mb-4" />
-
-
-          <Link to="/other" className="block text-sm text-black hover:text-blue-500 py-1">Other</Link>
-
-
-          
-        </div>
 
 
 
