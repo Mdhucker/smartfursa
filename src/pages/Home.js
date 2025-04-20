@@ -27,7 +27,7 @@ function Home() {
 
           {/* Hero Section */}
           <section className="p-8 sm:p-20 rounded-lg text-center space-y-2">
-            <h2 className="text-3xl sm:text-4xl font-bold text-blue-500 mb-3">
+            <h2 className="text-3xl sm:text-4xl  text-blue-500 mb-3">
               Real News. Real Jobs. Real Opportunities.<br />
               The more the information, the better your life becomes.
             </h2>
@@ -35,28 +35,47 @@ function Home() {
               Project X connects you with opportunities in Tanzania and beyond — from jobs and tenders to scholarships and programs that empower all people.
             </p>
 
-            <div className="mt-6">
-              <button
-                type="button"
-                className="text-white bg-blue-500 hover:bg-[#1da1f2]/90 focus:ring-4 focus:outline-none focus:ring-[#1da1f2]/50 font-medium rounded-lg text-base px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#1da1f2]/55 me-2 mb-2 "
-              >
-                Explore Opportunity
-              </button>
+              
+            <div className="flex flex-col sm:flex-row gap-3 justify-center items-center mt-6">
+  <button
+    type="button"
+    className="w-full sm:w-auto text-white bg-blue-500 focus:ring-4 flex-wrap focus:outline-none focus:ring-green-700 font-medium rounded-lg text-sm sm:text-base px-6 py-3 text-center inline-flex items-center justify-center"
+  >
+    Explore Opportunity
 
-              <Link to="/dashboard">
-                <button
-                  type="button"
-                  className="text-black bg-blue-50 hover:bg-blue-60 focus:ring-4 focus:outline-none focus:ring-[#3b5998]/50 font-medium rounded-lg text-base px-5 py-2 text-center inline-flex items-center dark:focus:ring-[#3b5998]/55 me-2 mb-2 border-2 border-blue-500"
-                >
-                  Get Started Now
-                </button>
-              </Link>
-            </div>
+    <path
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="2"
+      d="M1 5h12m0 0L9 1m4 4L9 9"
+    />
+  </button>
+
+    <button
+      type="button"
+      className="w-full sm:w-auto text-black bg-blue-50 focus:ring-4 focus:outline-none focus:ring-green-700 font-medium rounded-lg text-sm sm:text-base px-6 py-3 text-center inline-flex items-center justify-center border-2 border-blue-500"
+    >
+        <Link to="/dashboard">
+
+      Get Started Now
+      </Link>
+
+      <path
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        d="M1 5h12m0 0L9 1m4 4L9 9"
+      />
+    </button>
+</div>
+
           </section>
 
           <div className="w-full bg-white border border-blue-300 rounded-2xl p-8 my-10">
             <div className="max-w-7xl mx-auto text-center">
-              <h2 className="text-3xl md:text-4xl font-bold text-blue-500 mb-4">Looking For Nafasi za Kazi ?</h2>
+              <h2 className="text-3xl md:text-4xl text-blue-500 mb-4">Looking For Nafasi za Kazi ?</h2>
               <p className="text-lg md:text-xl text-gray-700 mb-6">
                 Kupitia Project X, unaweza kupata fursa za kazi serikalini, mashirika binafsi, NGOs, startups, na hata nafasi za kujiajiri — all in one place, rahisi kutumia, salama, na imeundwa mahsusi kwa vijana wa Kitanzania na Waafrika kwa ujumla.
               </p>
