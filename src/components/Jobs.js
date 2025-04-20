@@ -18,7 +18,7 @@ function Jobs() {
   <div className="w-9 h-9 rounded-full bg-blue-100 flex items-center justify-center border border-blue-300">
     <Briefcase className="w-5 h-5 text-blue-600" />
   </div>
-  <p className="text-gray-800">Exploring Job Opportunity using ProjectX</p>
+  <p className="text-gray-800">Exploring Job Opportunities</p>
 </div>
 
 <div className="w-full bg-blue-50 border border-blue-300 p-3 sm:p-4 my-4 rounded-md">
