@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/smartfursa/static/css/main.35347a0f.css",
-    "main.js": "/smartfursa/static/js/main.a9ce1513.js",
+    "main.css": "/smartfursa/static/css/main.79b15163.css",
+    "main.js": "/smartfursa/static/js/main.30445b14.js",
     "index.html": "/smartfursa/index.html",
-    "main.35347a0f.css.map": "/smartfursa/static/css/main.35347a0f.css.map",
-    "main.a9ce1513.js.map": "/smartfursa/static/js/main.a9ce1513.js.map"
+    "main.79b15163.css.map": "/smartfursa/static/css/main.79b15163.css.map",
+    "main.30445b14.js.map": "/smartfursa/static/js/main.30445b14.js.map"
   },
   "entrypoints": [
-    "static/css/main.35347a0f.css",
-    "static/js/main.a9ce1513.js"
+    "static/css/main.79b15163.css",
+    "static/js/main.30445b14.js"
   ]
 }
