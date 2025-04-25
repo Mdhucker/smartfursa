@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/smartfursa/static/css/main.dd04732f.css",
+    "main.js": "/smartfursa/static/js/main.c7778ca0.js",
+    "index.html": "/smartfursa/index.html",
+    "main.dd04732f.css.map": "/smartfursa/static/css/main.dd04732f.css.map",
+    "main.c7778ca0.js.map": "/smartfursa/static/js/main.c7778ca0.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.dd04732f.css",
+    "static/js/main.c7778ca0.js"
+  ]
+}
