@@ -46,7 +46,7 @@ function Home() {
     type="button"
     className="w-full sm:w-auto text-white bg-blue-500 focus:ring-4 flex-wrap focus:outline-none focus:ring-green-700 font-medium rounded-lg text-sm sm:text-base px-6 py-3 text-center inline-flex items-center justify-center"
   >
-    Explore Opportunity
+    Why SmartFursa ?
 <path
       stroke="currentColor"
       strokeLinecap="round"
@@ -169,7 +169,7 @@ function Home() {
     const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 
     if (isMobile) {
-      window.location.href = `https://api.whatsapp.com/send?phone=255686855352&text=Hello%20Mishan%2C%20I%20would%20like%20to%20know%20more%20about%20your%20services.`; // For mobile, open WhatsApp app directly in the same tab
+      window.location.href = `https://api.whatsapp.com/send?phone=255686855352&text=Hello%20SmartFursa%2C%20I%20would%20like%20to%20know%20more%20about%20your%20services.`; // For mobile, open WhatsApp app directly in the same tab
     } else {
       window.location.href = whatsappURL; // For desktop, open WhatsApp Web in the same tab
     }

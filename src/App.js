@@ -16,7 +16,7 @@ function App() {
 
   
   return (
-    <Router basename="/projectx">
+    <Router basename="/smartfursa">
       <Routes>
         <Route path="/" element={<Home />} />
         {/* <Route path="/Dashboard" element={<Dashboard />} /> */}

@@ -150,11 +150,14 @@ function Header() {
       <div className="container mx-auto flex justify-between items-center px-4 py-2">
         {/* Logo */}
         <Link to="/">
-          <img
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGXiyanH3C-cXQGBTnL3ZUzSSpb3eaCQR_Yw&s"
+        <h2 className="text-2xl italic font-bold text-blue-700 font-[Poppins]">
+           SmartFursa
+        </h2>
+        {/* <img
+            // src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGXiyanH3C-cXQGBTnL3ZUzSSpb3eaCQR_Yw&s"
             alt="Logo"
             className="w-28 h-8 rounded-md mr-1"
-          />
+          /> */}
         </Link>
 
         {/* Desktop Navigation */}

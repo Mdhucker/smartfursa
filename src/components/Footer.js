@@ -31,11 +31,15 @@ function Footer() {
 
             <br />
             <br />
-            <img
+            {/* <img
               src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGXiyanH3C-cXQGBTnL3ZUzSSpb3eaCQR_Yw&s"
               alt="Logo"
               className="w-28 h-8 rounded-md mr-2 mx-auto md:mx-0"
-            />
+            /> */}
+           <h2 className="text-2xl italic font-bold text-blue-700 font-[Poppins]">
+           SmartFursa
+        </h2>
+
           </div>
 
           {/* Jobs by Categories */}
