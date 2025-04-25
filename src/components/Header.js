@@ -1,6 +1,7 @@
 // import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import React, { useState, useEffect } from 'react';
+import { Share2 } from 'lucide-react'; // optional, or use any icon
 
 function Header() {
   // const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -10,6 +11,35 @@ function Header() {
 
   const [showHeader, setShowHeader] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
+
+
+
+  const [open, setOpen] = useState(false);
+
+  const websiteUrl = window.location.href;
+  const encodedUrl = encodeURIComponent(websiteUrl);
+
+
+  const socialLinks = [
+    {
+      name: 'WhatsApp',
+      href: `https://wa.me/?text=${encodedUrl}`,
+      color: 'text-green-500',
+    },
+    {
+      name: 'Facebook',
+      href: `https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`,
+      color: 'text-blue-600',
+    },
+    {
+      name: 'Twitter',
+      href: `https://twitter.com/intent/tweet?url=${encodedUrl}`,
+      color: 'text-sky-500',
+    },
+  ];
+
+
+
 
 
   useEffect(() => {
@@ -55,9 +85,8 @@ function Header() {
   }, [isSearchOpen]);
   
   
-
   useEffect(() => {
-    if (isSearchOpen || menuOpen) {
+    if (menuOpen) {
       // Disable horizontal scrolling only
       document.body.style.overflowX = 'hidden';
     } else {
@@ -68,18 +97,38 @@ function Header() {
     return () => {
       document.body.style.overflowX = 'auto';
     };
-  }, [isSearchOpen, menuOpen]);
+  }, [menuOpen]);
 
+
+
+    const handleShare = async () => {
+      if (navigator.share) {
+        try {
+          await navigator.share({
+            title: 'Check out this website!',
+            text: 'I found this awesome website!',
+            url: window.location.href,
+          });
+          console.log('Thanks for sharing!');
+        } catch (err) {
+          console.error('Error sharing:', err);
+        }
+      } else {
+        alert('Your browser does not support sharing.');
+      }
+    };
+
+  
   return (
     <>
 <header className={`bg-gray-300 text-black shadow-md sticky top-0 z-30 transition-transform duration-300 ${showHeader ? 'translate-y-0' : '-translate-y-full'}`}>
-<div className="w-full h-[150px] bg-gray-300">
+{/* <div className="w-full h-[150px] bg-gray-300">
         <img
           src="/images/1.png"
           alt="Ad Banner"
           className="w-full h-full object-cover"
         />
-      </div>
+      </div> */}
 
 
 
@@ -87,8 +136,8 @@ function Header() {
         <div className="container mx-auto flex justify-center">
           <p className="text-xs font-medium text-black">
             <span className="font-bold">New</span> — 
-            We have launched over 100+ opportunities and jobs at Project X! <span> </span>
-            <Link to="/new-blog" className="text-blue-600 hover:text-blue-800 inline-flex items-center">
+            We have launched over 100+ opportunities and jobs at SmartFursa! <span> </span>
+            <Link to="/new-blog" className="text-blue-600 hover:text-bProjectXlue-800 inline-flex items-center">
               Check out 
               <svg className="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
                 <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
@@ -114,8 +163,8 @@ function Header() {
         <nav className="flex space-x-4 items-center">
             <Link to="/" className="text-sm text-black hover:text-blue-500 py-1">HOME</Link>
             <Link to="/" className="text-sm text-black hover:text-blue-500 py-1">RESULTS</Link>
-            <Link to="/tanzania-jobs" className="text-sm text-black hover:text-blue-500 py-1">TANZANIA-JOBS</Link>
-            <Link to="/all-jobs" className="text-sm text-black hover:text-blue-500 py-1">ALL-JOBS</Link>
+            <Link to="/tz_jobs" className="text-sm text-black hover:text-blue-500 py-1">TANZANIA-JOBS</Link>
+            <Link to="/all_jobs" className="text-sm text-black hover:text-blue-500 py-1">ALL-JOBS</Link>
             <Link to="/tender" className="text-sm text-black hover:text-blue-500 py-1">TENDER</Link>
 
             {/* Post Dropdown */}
@@ -123,21 +172,42 @@ function Header() {
               className="relative group"
               onMouseEnter={() => setPostDropdownOpen(true)}
               onMouseLeave={() => setPostDropdownOpen(false)}
-    >
-      <button className="text-sm text-black hover:text-blue-500 focus:outline-none py-1">
-        POST
-      </button>
-      {postDropdownOpen && (
-        <div className="absolute mt-1 w-44 bg-white text-black border border-gray-300 rounded-xl shadow-xl z-30">
-          <Link to="/post-job" className="block px-4 py-2 text-sm hover:bg-blue-100 hover:text-blue-800">POST-JOB</Link>
-          <Link to="/post-tender" className="block px-4 py-2 text-sm hover:bg-blue-100 hover:text-blue-800">POST TENDER</Link>
-        </div>
-      )}
-    </div>
+            >
+              <button className="text-sm text-black hover:text-blue-500 focus:outline-none py-0">
+                POST
+                
+              </button>
+              {postDropdownOpen && (
+                <div className="absolute mt-1 w-44 bg-white text-black border border-gray-300 rounded-xl shadow-xl z-30">
+                  <Link to="/post-job" className="block px-4 py-2 text-sm hover:bg-blue-100 hover:text-blue-800">POST-JOB</Link>
+                  <Link to="/post-tender" className="block px-4 py-2 text-sm hover:bg-blue-100 hover:text-blue-800">POST TENDER</Link>
+                </div>
+              )}
+            </div>
 
     <Link to="/advertise" className="text-sm text-black hover:text-blue-500 py-1">ADVERTISE</Link>
-    <Link to="/other" className="text-sm text-black hover:text-blue-500 py-1">OTHER</Link>
-    <Link to="/other" className="text-sm text-black hover:text-blue-500 py-1">LOGIN</Link>
+
+
+
+
+    <div className="relative group">
+  <button className="text-sm text-black hover:text-blue-500 py-1">
+    OTHER   
+  </button>
+  <div className="absolute hidden group-hover:block bg-blue-50 shadow-md rounded-md mt-1 z-10 border border-blue-300">
+    <Link to="/other" className="block px-4 py-1 text-sm text-black hover:bg-blue-100">
+      All Other
+    </Link>
+    <Link to="/education" className="block px-4 py-2 text-sm text-black hover:bg-blue-100">
+      Education
+    </Link>
+    {/* Add more links as needed */}
+  </div>
+</div>
+
+
+
+    <Link to="/Login" className="text-sm text-black hover:text-blue-500 py-1">LOGIN</Link>
 
   </nav>
 </div>
@@ -207,6 +277,38 @@ function Header() {
             </svg>
           </Link>
 
+
+
+
+          <div className="relative inline-block">
+      <button
+        onClick={() => setOpen(!open)}
+        className="flex items-center gap-2 text-black hover:text-blue-600"
+      >
+        <Share2 className="w-5 h-5" />
+      </button>
+
+      {open && (
+        <div className="absolute right-0 mt-2 w-48 bg-white border rounded-lg shadow-lg z-10 p-2">
+          {socialLinks.map((link) => (
+            <a
+              key={link.name}
+              href={link.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`block px-4 py-2 hover:bg-gray-100 ${link.color}`}
+            >
+              Share on {link.name}
+            </a>
+          ))}
+        </div>
+      )}
+    </div>
+
+
+
+
+
           {/* Twitter */}
           <Link to="/twitter" className="hover:text-blue-600 text-black">
             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
@@ -224,31 +326,34 @@ function Header() {
           
           </div>
 
-                      
+    
+  
                   {/* Mobile Toggle */}
               <button
               
                 className="sm:hidden text-black focus:outline-none text-lg p-1"
-                onClick={() => setMenuOpen(!menuOpen)}
+                onClick={() => setMenuOpen(true)}
               >
                 ☰
               </button>
               </div>
 
               {/* Overlay Background (Click to close the menu) */}
+
               {menuOpen && (
+                
                 <div
-                  className="fixed top-0 left-0 w-screen h-screen overflow-hidden z-50 animate-fadeIn"
-                  onClick={() => setMenuOpen(false)}
-                />
+                  className="absolute top-0 left-0 w-screen h-screen overflow-hidden z-50 animate-fadeIn"
+                  onClick={() => setMenuOpen(false)} // Closes menu when overlay is clicked
+                  />
               )}
 
         {/* Mobile Slide-In Navigation */}
         <div
-          className={`fixed top-0 left-0 h-full w-64 transform transition-transform duration-300 ease-in-out z-40 sm:hidden ${
+          className={`fixed top-0 left-0 h-full w-64 transform transition-transform duration-300 ease-in-out z-50 sm:hidden ${
             menuOpen ? 'translate-x-0' : '-translate-x-full'
           }`}
-          onClick={(e) => e.stopPropagation()} // Prevent closing when clicking inside the menu
+          onClick={(e) => e.stopPropagation()} // Prevent closing when clicking inside sidebar
         >
           <div className="p-6 space-y-3 bg-blue-50 border border-blue-500 ">
             <Link to="/" className="block text-sm text-black hover:text-blue-500 py-1">Home</Link>
@@ -300,6 +405,7 @@ function Header() {
 
       </div>
     </header>
+
     </>
   );
 }

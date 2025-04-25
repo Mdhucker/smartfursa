@@ -24,7 +24,7 @@ function Results() {
       <div className="flex-1">
         <p className="text-lg sm:text-xl text-gray-700">
           <span className="text-blue-500 font-bold block">
-            Examinations Results via ProjectX
+            Examinations Results via SmartFursa
           </span>
         </p>
         <p className="text-gray-600 mt-2 text-sm sm:text-base">
@@ -70,16 +70,8 @@ function Results() {
         <div className="space-y-2 text-gray-700 text-base leading-relaxed">
           <div className="flex items-center gap-2">
             <BookText className="w-4 h-4 text-blue-600" />
-            <a href="/necta/form-two" className="text-blue-600 hover:underline">
-              Form Two NECTA Results
-            </a>
-          </div>
-          <hr className="border-t border-blue-200 w-full" />
-
-          <div className="flex items-center gap-2">
-            <BookText className="w-4 h-4 text-blue-600" />
-            <a href="/necta/form-four" className="text-blue-600 hover:underline">
-              Form Four NECTA Results
+            <a href="https://matokeo.necta.go.tz/results/2024/ftna/ftna.htm" className="text-blue-600 hover:underline">
+              Form Two NECTA Results : 2024
             </a>
           </div>
           <hr className="border-t border-blue-200 w-full" />
@@ -87,15 +79,23 @@ function Results() {
           <div className="flex items-center gap-2">
             <BookText className="w-4 h-4 text-blue-600" />
             <a href="https://matokeo.necta.go.tz/results/2024/csee/CSEE2024/CSEE2024.htm" className="text-blue-600 hover:underline">
-              Form Six NECTA Results
+              Form Four NECTA Results : 2024
             </a>
           </div>
           <hr className="border-t border-blue-200 w-full" />
 
           <div className="flex items-center gap-2">
             <BookText className="w-4 h-4 text-blue-600" />
-            <a href="/necta/psle" className="text-blue-600 hover:underline">
-              Primary School Leaving Exam (PSLE) Results
+            <a href="https://matokeo.necta.go.tz/results/2024/csee/CSEE2024/CSEE2024.htm" className="text-blue-600 hover:underline">
+              Form Six NECTA Results : 2024
+            </a>
+          </div>
+          <hr className="border-t border-blue-200 w-full" />
+
+          <div className="flex items-center gap-2">
+            <BookText className="w-4 h-4 text-blue-600" />
+            <a href="https://onlinesys.necta.go.tz/results/2024/psle/psle.htm" className="text-blue-600 hover:underline">
+              Primary School Leaving Exam (PSLE) Results : 2024
             </a>
           </div>
           <hr className="border-t border-blue-200 w-full" />
@@ -103,7 +103,7 @@ function Results() {
           <div className="flex items-center gap-2">
             <BookText className="w-4 h-4 text-blue-600" />
             <a href="/necta/qt" className="text-blue-600 hover:underline">
-              Qualifying Test (QT) Results
+              Qualifying Test (QT) Results : 2024
             </a>
           </div>
           <hr className="border-t border-blue-200 w-full" />
@@ -128,7 +128,7 @@ function Results() {
         <div className="space-y-2 text-gray-700 text-base leading-relaxed">
           <div className="flex items-center gap-2">
             <BookText className="w-4 h-4 text-blue-600" />
-            <a href="/necta/diploma-secondary" className="text-blue-600 hover:underline">
+            <a href="https://onlinesys.necta.go.tz/results/2024/dsee/index.htm" className="text-blue-600 hover:underline">
               Diploma in Secondary Education Results
             </a>
           </div>

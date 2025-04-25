@@ -114,13 +114,13 @@ function Footer() {
               <hr className="border-t-2 border-blue-500 mb-4" />
             </div>
             <p className="mt-2 max-w-xl mx-auto">
-              <strong>Privacy Policy:</strong> Project X respects your privacy. We do not share personal information without your consent. Any data you submit is protected and used solely to improve your experience.
+              <strong>Privacy Policy:</strong> SmartFursa respects your privacy. We do not share personal information without your consent. Any data you submit is protected and used solely to improve your experience.
             </p>
             <p className="mt-2 max-w-xl mx-auto">
-              <strong>About Project X:</strong> Project X is a community-driven blog and platform providing job updates, scholarship info, tenders, and professional development tools to empower Tanzanians. Our mission is to make opportunity accessible for everyone, regardless of their background or location.
+              <strong>About SmartFursa:</strong> SmartFursa is a community-driven blog and platform providing job updates, scholarship info, tenders, and professional development tools to empower Tanzanians. Our mission is to make opportunity accessible for everyone, regardless of their background or location.
             </p>
             <br />
-            <p className="text-[10px] text-gray-400">&copy; 2025 Developed by Project X: All Rights Reserved</p>
+            <p className="text-[10px] text-gray-400">&copy; 2025 Developed by SmartFursa: All Rights Reserved</p>
           </section>
         </div>
       </div>
