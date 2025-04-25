@@ -150,7 +150,7 @@ function Header() {
       <div className="container mx-auto flex justify-between items-center px-4 py-2">
         {/* Logo */}
         <Link to="/">
-        <h2 className="text-2xl italic font-bold text-blue-700 font-[Poppins]">
+        <h2 className="text-2xl italic font-bold text-blue-500 font-[Poppins]">
            SmartFursa
         </h2>
         {/* <img
@@ -165,10 +165,10 @@ function Header() {
         <div className="hidden sm:flex justify-end w-full pr-72">
         <nav className="flex space-x-4 items-center">
             <Link to="/" className="text-sm text-black hover:text-blue-500 py-1">HOME</Link>
-            <Link to="/" className="text-sm text-black hover:text-blue-500 py-1">RESULTS</Link>
+            <Link to="/Results" className="text-sm text-black hover:text-blue-500 py-1">RESULTS</Link>
             <Link to="/tz_jobs" className="text-sm text-black hover:text-blue-500 py-1">TANZANIA-JOBS</Link>
             <Link to="/all_jobs" className="text-sm text-black hover:text-blue-500 py-1">ALL-JOBS</Link>
-            <Link to="/tender" className="text-sm text-black hover:text-blue-500 py-1">TENDER</Link>
+            <Link to="/tenders" className="text-sm text-black hover:text-blue-500 py-1">TENDER</Link>
 
             {/* Post Dropdown */}
             <div
@@ -362,13 +362,13 @@ function Header() {
             <Link to="/" className="block text-sm text-black hover:text-blue-500 py-1">Home</Link>
             <hr className="border-t border-blue-300 w-full mb-4" />
 
-            <Link to="/tanzania-jobs" className="block text-sm text-black hover:text-blue-500 py-1">Tanzania-Jobs</Link>
+            <Link to="/Tz_jobs" className="block text-sm text-black hover:text-blue-500 py-1">Tanzania-Jobs</Link>
             <hr className="border-t border-blue-300 w-full mb-4" />
 
-            <Link to="/all-jobs" className="block text-sm text-black hover:text-blue-500 py-1">All-Jobs</Link>
+            <Link to="/all_jobs" className="block text-sm text-black hover:text-blue-500 py-1">All-Jobs</Link>
             <hr className="border-t border-blue-300 w-full mb-4" />
 
-            <Link to="/tender" className="block text-sm text-black hover:text-blue-500 py-1">Tender</Link>
+            <Link to="/tenders" className="block text-sm text-black hover:text-blue-500 py-1">Tender</Link>
             <hr className="border-t border-blue-300 w-full mb-4" />
 
             {/* Post Dropdown */}

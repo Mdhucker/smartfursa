@@ -5,12 +5,20 @@ import Results from '../components/Results';
 import Jobs from '../components/Jobs';
 import Trends from '../components/Trends';
 import { useEffect, useState } from "react";
+import { useNavigate } from 'react-router-dom';
 
 import { Link } from 'react-router-dom';
 
 function Home() {
 
+  const navigate = useNavigate();
 
+  const handleNavigate = () => {
+    navigate('/Why_sfursa');
+  };
+  const handleDashboard = () => {
+    navigate('/Dashboard');
+  };
 
 
   return (
@@ -41,43 +49,33 @@ function Home() {
             </p> */}
 
 
-            <div className="flex flex-col sm:flex-row gap-3 justify-center items-center mt-6">
-  <button
-    type="button"
-    className="w-full sm:w-auto text-white bg-blue-500 focus:ring-4 flex-wrap focus:outline-none focus:ring-green-700 font-medium rounded-lg text-sm sm:text-base px-6 py-3 text-center inline-flex items-center justify-center"
-  >
-    Why SmartFursa ?
-<path
-      stroke="currentColor"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      strokeWidth="2"
-      d="M1 5h12m0 0L9 1m4 4L9 9"
-    />
-    
-  </button>
+           
+<div className="flex flex-col sm:flex-row gap-3 justify-center items-center mt-6">
+    <button
+      type="button"
+      onClick={handleNavigate}
+
+      className="w-full sm:w-auto px-6 py-3 bg-blue-500 text-white font-semibold rounded-lg hover:bg-blue-900 transition text-base sm:text-xl"
+    >
+
+      Why SmartFursa ?
+
+
+    </button>
 
     <button
       type="button"
-      className="w-full sm:w-auto text-black bg-blue-50 focus:ring-4 focus:outline-none focus:ring-green-700 font-medium rounded-lg text-sm sm:text-base px-6 py-3 text-center inline-flex items-center justify-center border-2 border-blue-500"
-    >
-        <Link to="/dashboard">
+      onClick={handleDashboard}
+
+      className="w-full sm:w-auto text-black bg-blue-50 focus:ring-4 focus:outline-none focus:ring-green-700 font-medium rounded-lg text-sm sm:text-xl px-6 py-3 text-center inline-flex items-center justify-center border-2 border-blue-500"
+    >  
 
       Get Started Now
-      </Link>
-      <path
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="2"
-        d="M1 5h12m0 0L9 1m4 4L9 9"
-      />      
 
     </button>
-    
-
-
 </div>
+
+
 
 {/* 
 <div className="flex items-center justify-center  ">
