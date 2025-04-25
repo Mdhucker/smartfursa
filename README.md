@@ -1,2 +1,0 @@
-# smartfursa
-smartfursa system
